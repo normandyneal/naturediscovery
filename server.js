@@ -1,6 +1,6 @@
 // MEAN Stack RESTful API Tutorial - Contact List App
 
-//gets express
+//gets express.
 var express = require('express'); 
 
 //Creates an express application. The express() function is a top-level function exported by the 
