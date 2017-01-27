@@ -1,0 +1,47 @@
+.ng-invalid.ng-dirty {
+border-color: #FA787E;
+}
+
+
+.ng-valid.ng-dirty {
+border-color: #78FA89;
+}
+
+/* red border for invalid, green border for valid          */
+/* we us ng dirty since we dont want the borders to show up until we started typing*/
+
+body {
+   	background: #00FFFF;
+	background: url('../images/black.png');
+	font-family: sans-serif; 
+    font-size: 27px;
+    color: 	#A9A9A9;
+}
+
+
+.panel{
+	background: url('../images/black.png');
+	
+}
+
+button {
+	background: #e7e7e7;
+	color: 	#A9A9A9;
+	
+}
+
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+    color: #F5FFFA;
+    background-color:#e7e7e7;
+    }
+	
+	.nav-pills a{
+color:	#A9A9A9;
+}
+	
+.nav>li>a:hover,
+.nav>li>a:focus {
+    text-decoration: none;
+    background-color: #FFF8DC;
+}

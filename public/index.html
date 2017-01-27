@@ -1,0 +1,157 @@
+<!DOCTYPE> <!-- this declares that this is an html doc-->
+
+<!-- the html root element-->
+<!--This enables anguluar js it is a directive-->
+<!--A directive is a marker on a HTML tag that tell Angular to run or reference some JavaScript code -->
+<!--This directive runs the module when the document loads. It will treat the html as part of the angluar app--> 
+<!--It attaches the application module to the page-->
+<html ng-app="myApp"> 
+		
+	<!--an html document is divided into two parts, the head and the body-->
+	<!--an html document is divided into two parts, the head and the body-->
+	<!--this has info on the document it can also contain other meta data-->
+	<!--we add styles and javascript here-->
+	<head>
+		<!--bootstrap-->
+		<!-- the styles are put at the top since we need to load it right away.-->
+		<!-- Latest compiled and minified CSS-->
+		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"> -->
+		<!-- Optional theme -->
+		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css"> -->
+		<link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+		<link rel="stylesheet" href="bootstrap/style.css">
+			
+		<!--an opening an closing tag is called an element-->
+		<title>Music Artist Database</title>
+	</head>
+	
+	<!--the body is where the content of the document is going to be contained-->
+	<body>
+		<!--bootstrap requires a container element to wrap site content and house the grid system-->
+		<!-- The div surrounds our entire layout including the header. -->
+		<!-- the ng-controller=AppCtrl refers to our controller file.  -->
+	    <!-- anything in AppCtrl can only be reached inside the div -->
+		<!-- ng-controller attaches a controller function to the page. -->
+				
+
+			
+		<div class="container">
+			<h1>Welcome to a Music Artist Database</h1>
+			
+			<div ng-controller="ArtistsFromDatabase">
+				<div> Choose a genre from this Drop Down Menu:</div>
+				<select name="genreSelect" ng-model="chosenGenre" class= "dropdown" >
+					<option value="All" >All</option>
+					<option value="R&B">R&B </option>
+					<option value="Country">Country</option>
+					<option value="Metal">Metal</option>
+					<option value="Tejano">Tejano</option>
+					<option value="Blues">Blues</option>
+					
+				</select>
+				
+				<div> Here is the chosen genre: {{chosenGenre}}</div>
+			
+				<button ng-click="checkGenre(artistList)"> Display Artists Based On Genre </button>
+				
+				<br></br>
+				
+				<section ng-controller="PanelController as panel", ng-repeat="product in artistList | orderBy:'name'">
+					
+					<div ng-show="product.genreSelected">
+						<ul class="nav nav-pills ">
+							<li ng-class="{ active: panel.isSelected(1)}">
+								<a href ng-click="panel.selectTab(1)">Description</a>
+							</li>
+
+							<li ng-class="{ active: panel.isSelected(2)}">
+								<a href ng-click="panel.selectTab(2)">Reviews</a>
+							</li>
+						</ul>	
+						
+						<div class="panel" ng-show="panel.isSelected(1)">
+					
+							
+								<h1> {{product.name}} </h1>
+								<img ng-src="{{product.image}}"> 
+								<h2> Debut: {{product.debut}} </h2>
+								<h2> Genre: {{product.genre}} </h2>
+								
+								<h2>Description: {{product.description}}</h2>
+						</div>
+						
+
+						
+						<div class="panel" ng-show="panel.isSelected(2)">
+							<h1> {{product.name}} </h1>
+							<img ng-src="{{product.image}}"> 
+							<h2>Reviews</h2>
+								
+							<blockquote ng-repeat="review in product.reviews">
+								<div>
+									<cite>Review by: {{review.author}}</cite>
+								</div>
+									
+								<b>Stars: {{review.stars}}</b>
+									
+								<div>{{review.body}}</div>
+																				
+							</blockquote>
+								
+								<form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit= "reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
+									<h2>Review Form</h2>
+									
+									<input ng-model="reviewCtrl.review.author" type="email" placeholder="Enter your email" required />																   <!--when the form is submitted, if value is false, add review will never get called, only if value is true would the second part of the expression be evaluated and add review get called.-->
+
+									
+									<select ng-model="reviewCtrl.review.stars" required>
+										<option value="1">1 star</option>
+										<option value="2">2 stars</option>
+										<option value="3">3 stars</option>
+										<option value="4">4 stars</option>
+										<option value="5">5 stars</option>
+									</select>
+									<br></br>
+									<textarea rows="4" cols="50" ng-model="reviewCtrl.review.body" placeholder="Type Review" required></textarea>
+									
+								
+									
+									<!--<div> reviewForm is {{reviewForm.$valid}} </div> --!> <!--The form has a name called reviewForm, and when we call .$valid. $ means we are refrerencign a built in property on the form from anguluar-->
+									<input type="submit" value="Submit"/>
+									
+									<h4>Review Preview</h4>
+									<blockquote>
+										<div>
+											<cite>Review by: {{reviewCtrl.review.author}}</cite>
+										</div>
+										<b>Stars: {{reviewCtrl.review.stars}}</b>
+									
+										<div>{{reviewCtrl.review.body}} </div>
+								
+										
+									</blockquote>
+								
+								</form>
+						</div>
+					
+						<br>
+					</div>
+				</section>	
+					
+			</div>
+		</div>
+				
+		
+		 <!-- the anguluar link is placed at the bottom since we do not need to load it right away.
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"></script> 
+		 -->
+		<script src="angular/angular.js"></script>
+		
+		
+		<!-- this connects the controllers with the index.-->
+		<script src="controllers/controller.js"></script>
+		<script src="controllers/more.js"></script>
+
+	</body>
+
+</html>
