@@ -205,17 +205,18 @@ app.put('/artists/:id', function (req, res) {
         });
 });
 
-/*
+
 app.listen(3000);
 
 //can be seen in command prompt
 console.log("Server running on port 3000");
 
-*/
 
+
+/*
 var port = process.env.PORT || 8000
 server.listen(port, function() {
     console.log("App is running on port " + port);
 });
-
+*/
 
