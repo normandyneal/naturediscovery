@@ -21,7 +21,11 @@ var bodyParser = require('body-parser');
 //we want to use index.html as a template for are app so we need this
 //static means an html, javascript or html file, css, images, they do not change.
 //the __dirname + '/public' tells the server where to look for our static files. 
+
+//app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/public'));
+
+
 
 //this makes it so we parse the body of the input it recieves.
 app.use(bodyParser.json());
