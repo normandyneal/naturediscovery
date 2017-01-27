@@ -11,7 +11,9 @@ var app = express();
 var mongojs = require('mongojs');
 
 //1st param :which mongo db database, 2nd paramater: which collection we are using
-var db = mongojs('contactlist', ['contactlist']);
+
+
+//var db = mongojs('contactlist', ['contactlist']);
 
 //we use body parser to parse the body.
 var bodyParser = require('body-parser');
@@ -26,6 +28,8 @@ app.use(bodyParser.json());
 
 //the '/contactlist is the same route from controller js's -> $http.get('/contactlist').success(function(response) 
 //this tells the server to listen for the get request for our created contactlist route from controller.js  
+
+/*
 app.get('/contactlist', function (req, res) {
    
    console.log('I received a GET request');
@@ -48,6 +52,8 @@ app.get('/contactlist', function (req, res) {
     });
   
 });
+
+
 
 //the app.post listens to the post request from the contoller 
 app.post('/contactlist', function (req, res) {
@@ -128,7 +134,7 @@ app.put('/contactlist/:id', function (req, res) {
 	        res.json(doc);
         });
 });
-
+*/
 
 
 
@@ -146,7 +152,8 @@ app.put('/contactlist/:id', function (req, res) {
 
 //Here starts the code for the actual artist database api
 
-var artistDb = mongojs('contactlist', ['artists']);
+var dbURI= 'mongodb://norm:norm@ds019960.mlab.com:19960/musicartist'
+var artistDb = mongojs(dbURI, ['artists']);
 
 app.get('/artists', function (req, res) {
     console.log('I received a GET request for the artists collection');
