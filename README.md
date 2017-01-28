@@ -1,3 +1,6 @@
+Check out the web app in action here: 
+https://nnealartistdatabase.herokuapp.com/
+
 This is a Javascript MEAN stack Web application. 
 
 When the user navigates to the website, they are prompted with a dropdown that has a list of genres. Upon choosing a genre they can press a button that displays artists from that genre. For each artist there are two horizontal nav bars. One has a description of the artist. The other one displays a list of artist reviews, and then gives the user the option of creating an artist review themselves.
