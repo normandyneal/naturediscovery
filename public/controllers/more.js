@@ -41,13 +41,6 @@ otherApp.controller('ArtistsFromDatabase', ['$scope','$http', function($scope,$h
 			
 			
 		};
-	
-	
-			
-	
-	
-	
-	
 }]);
 
 otherApp.controller('PanelController', function(){
