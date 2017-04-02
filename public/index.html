@@ -16,6 +16,8 @@
 
 		<link rel="stylesheet" href="bootstrap/bootstrap.min.css">
 		<link rel="stylesheet" href="bootstrap/style.css">
+		
+		
 			
 		<!--an opening an closing tag is called an element-->
 		<title>Music Artist Database</title>
@@ -30,7 +32,7 @@
 		<!-- ng-controller attaches a controller function to the page. -->
 				
 		<div class="container">
-			<h1>Welcome to a MEAN Stack Music Artist Database</h1>
+			<h1 id="sticker">Welcome to a MEAN Stack Music Artist Database</h1>
 			
 			<div ng-controller="ArtistsFromDatabase">
 				<div> Choose a genre from this Drop Down Menu:</div>
@@ -127,6 +129,13 @@
 				</section>	
 					
 			</div>
+		
+		
+		<img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Music_lesson_Staatliche_Antikensammlungen_2421.jpg" width="621" height="276">
+		<img data-src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Music_lesson_Staatliche_Antikensammlungen_2421.jpg" width="621" height="276">
+
+		
+		
 		</div>
 				
 		
@@ -138,7 +147,22 @@
 		<!-- this connects the controllers with the index.-->
 		<!--<script src="controllers/controller.js"></script>-->
 		<script src="controllers/more.js"></script>
-
+		<script src="jquery/jquery-3.2.0.min.js"></script>
+		<script src="jquery/jquery.lazyloadxt.extra.min.js"></script>
+		<script src="jquery/jquery.sticky.js"></script>
+		
+		<script>
+		
+		$(document).ready(function() {
+ 
+			 $(document).ready(function(){
+				$("#sticker").sticky({topSpacing:0});
+			});
+		
+ 
+		});	
+		</script>
+				
 	</body>
 
 </html>

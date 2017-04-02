@@ -45,3 +45,10 @@ color:	#A9A9A9;
     text-decoration: none;
     background-color: #FFF8DC;
 }
+
+
+#sticker{
+	font: italic bold 30px Georgia, serif;
+	color:red;
+	
+}
