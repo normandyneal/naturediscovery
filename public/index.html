@@ -25,6 +25,10 @@
 	
 	<!--the body is where the content of the document is going to be contained-->
 	<body>
+		
+		
+		
+		
 		<!--bootstrap requires a container element to wrap site content and house the grid system-->
 		<!-- The div surrounds our entire layout including the header. -->
 		<!-- the ng-controller=AppCtrl refers to our controller file.  -->
@@ -32,7 +36,11 @@
 		<!-- ng-controller attaches a controller function to the page. -->
 				
 		<div class="container">
+			
+			<div class="parallax"></div>
 			<h1 id="sticker">Welcome to a MEAN Stack Music Artist Database</h1>
+			<p><a href="lazy.html" title="Click Here for Lazy Loading">Lazy Loading Example</a> </p>
+			
 			
 			<div ng-controller="ArtistsFromDatabase">
 				<div> Choose a genre from this Drop Down Menu:</div>
@@ -53,6 +61,8 @@
 				<br></br>
 				
 				<section ng-controller="PanelController as panel", ng-repeat="product in artistList | orderBy:'name'">
+					
+					<div class="parallax"></div>
 					
 					<div ng-show="product.genreSelected">
 						<ul class="nav nav-pills ">
@@ -130,43 +140,6 @@
 					
 			</div>
 		
-		
-		<p>
-		<img data-src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Music_lesson_Staatliche_Antikensammlungen_2421.jpg" width="621" height="276">
-		</p>
-		<p>
-		<img data-src="http://lorempixel.com/300/200/cats/1" width="300" height="200" src="http://lorempixel.com/300/200/cats/1" class="lazy-loaded">
-		</p>
-		<p>
-		<img data-src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Music_lesson_Staatliche_Antikensammlungen_2421.jpg" width="621" height="276">
-		</p>
-		<p>
-		<img data-src="http://lorempixel.com/300/200/cats/1" width="300" height="200" src="http://lorempixel.com/300/200/cats/1" class="lazy-loaded">
-		</p>
-		<p>
-		<img data-src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Music_lesson_Staatliche_Antikensammlungen_2421.jpg" width="621" height="276">
-		</p>
-		<p>
-		<img data-src="http://lorempixel.com/300/200/cats/1" width="300" height="200" src="http://lorempixel.com/300/200/cats/1" class="lazy-loaded">
-		</p>
-		<p>
-		<img data-src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Music_lesson_Staatliche_Antikensammlungen_2421.jpg" width="621" height="276">
-		</p>
-		<p>
-		<img data-src="http://lorempixel.com/300/200/cats/1" width="300" height="200" src="http://lorempixel.com/300/200/cats/1" class="lazy-loaded">
-		</p>
-		<p>
-		<img data-src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Music_lesson_Staatliche_Antikensammlungen_2421.jpg" width="621" height="276">
-		</p>
-		<p>
-		<img data-src="http://lorempixel.com/300/200/cats/1" width="300" height="200" src="http://lorempixel.com/300/200/cats/1" class="lazy-loaded">
-		</p>
-		<p>
-		<img data-src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Music_lesson_Staatliche_Antikensammlungen_2421.jpg" width="621" height="276">
-		</p>
-		<p>
-		<img data-src="http://lorempixel.com/300/200/cats/1" width="300" height="200" src="http://lorempixel.com/300/200/cats/1" class="lazy-loaded">
-		</p>
 		
 		
 		
