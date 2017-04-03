@@ -47,8 +47,60 @@ color:	#A9A9A9;
 }
 
 
+
+
+
+
+
+
 #sticker{
 	font: italic bold 30px Georgia, serif;
 	color:red;
+	background-color: none;
+    animation-name: example;
+    animation-duration: 4s;
+	transition: font-size 4s;
 	
 }
+
+
+
+/* The animation code */
+@keyframes example {
+    0%   {background-color: red;}
+    25%  {background-color: yellow;}
+    50%  {background-color: blue;}
+    100% {background-color: green;}
+}
+
+
+#sticker:hover {
+    font-size: 60px;
+}
+
+
+
+.image-big{
+	opacity:0.1;
+	transition: opacity 5s;
+	
+}
+
+
+.image-big:hover {
+   
+   
+    opacity:1;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
