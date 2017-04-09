@@ -8,68 +8,101 @@
 	<link rel="stylesheet" href="bootstrap/app.css">
 </head>
 <body> 
- <header class="container-fluid">
+	<header class="container-fluid">
         <h1>HEADER</h1>
-    </header>
-    <div class="container-fluid">
+	</header>
+    
+	<div class="container-fluid">
+	
+		    <div class="row">
+				<div class="sports-icon-list sports-list-top visible-md">    
+					<div>
+						
+						<a href="downhill.html">
+							<img src="images/images/icon-downhill.png" alt="Downhill" />
+							<h6>Downhill</h6>
+						</a>
 
-        <div class="row">
+						<a href="snowboarding.html">
+							<img src="images/images/icon-snowboard.png" alt="Snowboarding" />
+							<h6>Snowboarding</h6>
+						</a>
 
-		 <section class="col-sm-8 col-sm-push-2"> <!--This pushes 2 to the right-->
+						<a href="bobsled.html">
+							<img src="images/images/icon-bobsled.png" alt="Bobsled" />
+							<h6>Bobsled</h6>
+						</a>
 
-                <article>
-                    <h2>Why I Went Into the Lake</h2>
-                    <img src="images/images/lake.jpg" />
-                    <div class="row">
-                        <p class="col-sm-10">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua.
-                        </p>
-                        <div class="col-sm-2">
-                            <input type="button" class="btn btn-primary" value="More..." />
-                        </div>
-                    </div>
-                </article>
+						<a href="cross-country.html">
+							<img src="images/images/icon-cross-country.png" alt="Cross Country" />
+							<h6>Cross Country</h6>
+						</a>
 
-                <article>
-                    <h2>My Name is NOT Bullwinkle</h2>
-                    <img src="./images/images/elk.jpg" />
-                    <div class="row">
-                        <p class="col-sm-10">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua.
-                        </p>
-                        <div class="col-sm-2">
-                            <input type="button" class="btn btn-primary" value="More..." />
-                        </div>
-                    </div>
-                </article>
+						<a href="biathlon.html">
+							<img src="images/images/icon-biathlon.png" alt="Biathlon" />
+							<h6>Biathlon</h6>
+						</a>
+					
+					</div>
+				
+				</div>
+									
+			</div>
+	</div>
+	
+	<div class="container-fluid container-md-height ">
+		
+        <div class="row row-md-height">
 
-                <article>
-                    <h2>There's Gotta be a Penguin Up Here Somewhere</h2>
-                    <img src="images/images/snowboarder.jpg" />
-                    <div class="row">
-                        <p class="col-sm-10">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        </p>
-                        <div class="col-sm-2">
-                            <input type="button" class="btn btn-primary" value="More..." />
-                        </div>
-                    </div>
-                </article>
+			<section class="col-sm-9 col-lg-8 col-sm-push-3 col-lg-push-2 col-md-height "> 
 
-            </section>
-		
-		
-		
-		
-		
-		
-		
-		
-            <aside class="col-sm-2 col-sm-pull-8"> <!--This pulls 8 to the left. push and pull are always relative to the left side of the browser-->
+					<article>
+						<h2>Why I Went Into the Lake</h2>
+						<img src="images/images/lake.jpg" />
+						<div class="row">
+							<p class="col-sm-10">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua.
+							</p>
+							<div class="col-sm-2">
+								<input type="button" class="btn btn-primary" value="More..." />
+							</div>
+						</div>
+					</article>
+
+					<article>
+						<h2>My Name is NOT Bullwinkle</h2>
+						<img src="./images/images/elk.jpg" />
+						<div class="row">
+							<p class="col-sm-10">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua.
+							</p>
+							<div class="col-sm-2">
+								<input type="button" class="btn btn-primary" value="More..." />
+							</div>
+						</div>
+					</article>
+
+					<article>
+						<h2>There's Gotta be a Penguin Up Here Somewhere</h2>
+						<img src="images/images/snowboarder.jpg" />
+						<div class="row">
+							<p class="col-sm-10">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+							</p>
+							<div class="col-sm-2">
+								<input type="button" class="btn btn-primary" value="More..." />
+							</div>
+						</div>
+					</article>
+
+			</section>
+			
+			
+            <aside class="col-sm-3 col-lg-2 col-sm-pull-9 col-lg-pull-8 col-md-height "> <!--This pulls 8 to the left. push and pull are always relative to the left side of the browser-->
                 <h4 class="range-title">
                     <b>Mountain Ranges</b>
                 </h4>
@@ -103,10 +136,9 @@
                 </div>
 
             </aside>
+          
 
-           
-
-            <aside class="col-sm-2">
+            <aside class="sports-icon-list col-xs-12 col-md-2 hidden-md col-md-height ">
                 <a href="downhill.html">
                     <img src="images/images/icon-downhill.png" alt="Downhill" />
                     <h6>Downhill</h6>
@@ -134,8 +166,10 @@
             </aside>
         </div>
     </div>
-    <footer class="container-fluid">
+    
+	<footer class="container-fluid">
         <h1>FOOTER</h1>
     </footer>
+
 </body>
 </html>

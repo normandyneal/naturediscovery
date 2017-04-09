@@ -76,6 +76,13 @@ article p {
     font-size: 16px;
 }
 
+
+
+
+
+
+
+
 @media (max-width: 767px) {
 
     .range-list h4 {
@@ -104,6 +111,9 @@ article p {
    http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-columns-of-same-height
 */
 /* columns of same height styles */
+
+
+
 .container-xs-height {
     display:table;
     padding-left:0px;
@@ -116,6 +126,7 @@ article p {
     display:table-cell;
     float:none;
 }
+
 @media (min-width: 768px) {
     .container-sm-height {
         display:table;
