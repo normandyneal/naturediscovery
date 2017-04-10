@@ -76,6 +76,31 @@ article p {
     font-size: 16px;
 }
 
+.fill-screen {
+    background-size: cover;
+    background-position: center;
+}
+
+.content-filler {
+    min-height: 350px;
+}
+
+
+
+.fixed-attachment {
+    background-attachment: fixed;
+}
+
+
+@media (max-width: 1024px){
+    .fixed-attachment {
+        background-attachment: scroll;
+    }	
+}
+
+
+
+
 
 
 

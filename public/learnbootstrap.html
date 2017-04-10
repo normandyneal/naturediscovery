@@ -8,9 +8,51 @@
 	<link rel="stylesheet" href="bootstrap/app.css">
 </head>
 <body> 
+	
+	
+	
 	<header class="container-fluid">
         <h1>HEADER</h1>
 	</header>
+	
+	
+    <div class="container-fluid">
+        <div class="row">
+            <div class="fill-screen" style="background-image: url(images/images/lake.jpg)">
+            </div>
+        </div>
+        
+		<div class="row content-filler">
+        </div>
+        
+		<div class="row">
+            <div class="fill-screen fixed-attachment" style="background-image: url(images/images/elk.jpg)">
+            </div>
+        </div>
+        
+		<div class="row content-filler">
+        </div>
+        
+		<div class="row">
+            <div class="fill-screen fixed-attachment" style="background-image: url(images/images/snowboarder.jpg)">
+            </div>
+        </div>
+        
+		<div class="row content-filler">
+        </div>
+    
+	</div>
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!--
     
 	<div class="container-fluid">
 	
@@ -102,7 +144,7 @@
 			</section>
 			
 			
-            <aside class="col-sm-3 col-lg-2 col-sm-pull-9 col-lg-pull-8 col-md-height "> <!--This pulls 8 to the left. push and pull are always relative to the left side of the browser-->
+            <aside class="col-sm-3 col-lg-2 col-sm-pull-9 col-lg-pull-8 col-md-height "> 
                 <h4 class="range-title">
                     <b>Mountain Ranges</b>
                 </h4>
@@ -167,9 +209,22 @@
         </div>
     </div>
     
+	-->
+	
 	<footer class="container-fluid">
         <h1>FOOTER</h1>
     </footer>
 
 </body>
+<script src="jquery/jquery-3.2.0.min.js"></script>
+<script>
+	$(function () {
+		$(window).on("load resize", function () {
+			$(".fill-screen").css("height", window.innerHeight);
+		});
+	});
+</script>
+
+
+
 </html>
