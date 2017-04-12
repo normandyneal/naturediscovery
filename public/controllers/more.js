@@ -2,6 +2,8 @@ var otherApp = angular.module('otherApp', []);
 
 otherApp.controller('ArtistsFromDatabase', ['$scope','$http', function($scope,$http){
 	
+		var questionNumber=1;
+		
 		$http.get('/artists').success(function(response) {
 			
 				//this is what happens after the response is recieved/. 
@@ -14,7 +16,9 @@ otherApp.controller('ArtistsFromDatabase', ['$scope','$http', function($scope,$h
 				
 				console.log("Now print out the scope that should have the data from the get");
 				console.log($scope.artistList);
-			
+				
+				$scope.bodyConcern=88;
+					
 		});
 	
 		$scope.checkGenre=function(x){
@@ -38,9 +42,35 @@ otherApp.controller('ArtistsFromDatabase', ['$scope','$http', function($scope,$h
 				
 			console.log(x[i].name+ " " + x[i].genre + " " + x[i].genreSelected )
 			}	
-			
+		};
+		
+		
+		//Start of Nature Discovery
+		
+		$scope.switchQuestion=function(x,y){
+			$scope.bodyConcern=y;
+			console.log($scope.bodyConcern);
+			questionNumber=x;
 			
 		};
+		
+		$scope.checkQuestionNumber=function(x){
+			if(x==questionNumber)
+			{
+				return true;
+				
+			}
+			
+			return false
+		};
+		
+		
+		
+		
+		
+		
+		
+		
 }]);
 
 otherApp.controller('PanelController', function(){

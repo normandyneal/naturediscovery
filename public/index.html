@@ -1,48 +1,29 @@
-<!DOCTYPE> <!-- this declares that this is an html doc-->
+<!DOCTYPE> 
 
-<!-- the html root element-->
 <!--This enables anguluar js it is a directive-->
 <!--A directive is a marker on a HTML tag that tell Angular to run or reference some JavaScript code -->
 <!--This directive runs the module when the document loads. It will treat the html as part of the angluar app--> 
 <!--It attaches the application module to the page-->
 <html ng-app="otherApp"> 
 		
-	<!--an html document is divided into two parts, the head and the body-->
-	<!--this has info on the document it can also contain other meta data-->
-	<!--we add styles and javascript here-->
 	<head>
-		<!--bootstrap-->
-		<!-- the styles are put at the top since we need to load it right away.-->
-
 		<link rel="stylesheet" href="bootstrap/bootstrap.min.css">
 		<link rel="stylesheet" href="bootstrap/style.css">
-		
-		
-			
-		<!--an opening an closing tag is called an element-->
-
 		<title>Art Naturals- Nature Discovery</title>
-
 	</head>
 	
-	<!--the body is where the content of the document is going to be contained-->
 	<body>
-				
-		<!--bootstrap requires a container element to wrap site content and house the grid system-->
-		<!-- The div surrounds our entire layout including the header. -->
-		<!-- the ng-controller=AppCtrl refers to our controller file.  -->
-	    <!-- anything in AppCtrl can only be reached inside the div -->
-		<!-- ng-controller attaches a controller function to the page. -->
-				
-		<div class="container">
+					
+		<div ng-controller="ArtistsFromDatabase">
 			
-			<div class="parallax"></div>
-			<h1 id="sticker">Nature Discovery</h1>
-			<p><a href="lazy.html" title="Click Here for Lazy Loading">Lazy Loading Example</a> </p>
-			<p><a href="learnbootstrap.html" title="Click Here for Learning Bootstrap">Bootstrap Learning Page</a> </p>
+			<!-- the ng-controller="ArtistsFromDatabase" refers to our controller file.  -->
+			<!-- anything in "ArtistsFromDatabase" can only be reached inside the div -->
+			<!-- ng-controller attaches a controller function to the page. -->
 			
-			<div ng-controller="ArtistsFromDatabase">
-				<div> Choose a genre from this Drop Down Menu:</div>
+			<div class="container question-one" ng-show="checkQuestionNumber(1)">
+					
+				<h1>Nature Discovery</h1>
+				
 				<select name="genreSelect" ng-model="chosenGenre" class= "dropdown" >
 					<option value="All" >All</option>
 					<option value="R&B">R&B </option>
@@ -50,18 +31,25 @@
 					<option value="Metal">Metal</option>
 					<option value="Tejano">Tejano</option>
 					<option value="Blues">Blues</option>
-					
 				</select>
 				
-				<div> Here is the chosen genre: {{chosenGenre}}</div>
-			
-				<button ng-click="checkGenre(artistList)"> Display Artists Based On Genre </button>
+				
+				<div> Do you have a mind or a body concern?</div>
+				
+				<button ng-click="switchQuestion(2,'mind')"> Mind </button>
+				<button ng-click="switchQuestion(2,'body')"> Body </button>
+				
+				<div> Here is your body concern: {{bodyConcern}}</div>
 				
 				<br></br>
+				<button ng-click="checkGenre(artistList)"> Random Music Artists</button>
+				<br></br>
+			
+	
 				
 				<section ng-controller="PanelController as panel", ng-repeat="product in artistList | orderBy:'name'">
 					
-					<div class="parallax"></div>
+					
 					
 					<div ng-show="product.genreSelected">
 						<ul class="nav nav-pills ">
@@ -126,8 +114,7 @@
 										<b>Stars: {{reviewCtrl.review.stars}}</b>
 									
 										<div>{{reviewCtrl.review.body}} </div>
-								
-										
+																			
 									</blockquote>
 								
 								</form>
@@ -138,38 +125,46 @@
 				</section>	
 					
 			</div>
+			
+			
+			
+			<div class="container question-two" ng-show="checkQuestionNumber(2)">
+				<p>the april sun and your {{bodyConcern}}</p>
+				
+				<p>the april sun and your {{bodyConcern}}</p>
+				<p>the april sun and your {{bodyConcern}}</p>
+				<p>the april sun and your {{bodyConcern}}</p>
+				
+				
+				<button ng-click="switchQuestion(1)"> back </button>
+				<button ng-click="switchQuestion(3)"> forward </button>
+				
+							
+			</div>
+			
+			<div class="container question-three" ng-show="checkQuestionNumber(3)">
+				<p>Product Page</p>
+												
+				<button ng-click="switchQuestion(2)"> back </button>
+										
+			</div>
+			
+			
+			
+			
 		
-		
-		
-		
+
 		
 		</div>
-				
 		
-		 <!-- the anguluar link is placed at the bottom since we do not need to load it right away.
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"></script> 
-		 -->
-		<script src="angular/angular.js"></script>
-				
-		<!-- this connects the controllers with the index.-->
-		<!--<script src="controllers/controller.js"></script>-->
-		<script src="controllers/more.js"></script>
-		<script src="jquery/jquery-3.2.0.min.js"></script>
-		<script src="jquery/jquery.lazyloadxt.extra.min.js"></script>
-		<script src="jquery/jquery.sticky.js"></script>
-		
-		<script>
-		
-		$(document).ready(function() {
- 
-			 $(document).ready(function(){
-				$("#sticker").sticky({topSpacing:0});
-			});
-		
- 
-		});	
-		</script>
+			
+	
 				
 	</body>
+	
+	<script src="angular/angular.js"></script>
+	<!-- this connects the controllers with the index.-->
+	<script src="controllers/more.js"></script>	
+
 
 </html>

@@ -1,7 +1,7 @@
 {
-  "name": "musicartistapp",
+  "name": "naturediscovery",
   "version": "0.0.0",
-  "description": "An artist database",
+  "description": "Find you natural solution!",
   "engines": {
     "node": "~4.4.1",
     "npm": "~2.15.0"
