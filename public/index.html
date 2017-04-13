@@ -24,6 +24,18 @@
 					
 				<h1>Nature Discovery</h1>
 				
+				<div> Do you have a mind or a body concern?</div>
+				
+				<button ng-click="switchToQuestionTwo('mind')"> Mind </button>
+				<button ng-click="switchToQuestionTwo('body')"> Body </button>
+				
+				
+				
+				
+				
+				
+			<!--
+				
 				<select name="genreSelect" ng-model="chosenGenre" class= "dropdown" >
 					<option value="All" >All</option>
 					<option value="R&B">R&B </option>
@@ -33,13 +45,7 @@
 					<option value="Blues">Blues</option>
 				</select>
 				
-				
-				<div> Do you have a mind or a body concern?</div>
-				
-				<button ng-click="switchQuestion(2,'mind')"> Mind </button>
-				<button ng-click="switchQuestion(2,'body')"> Body </button>
-				
-				<div> Here is your body concern: {{bodyConcern}}</div>
+
 				
 				<br></br>
 				<button ng-click="checkGenre(artistList)"> Random Music Artists</button>
@@ -91,7 +97,7 @@
 								
 								<form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit= "reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
 									<h2>Review Form</h2>
-									<!--when the form is submitted, if value is false, add review will never get called, only if value is true would the second part of the expression be evaluated and add review get called.-->
+									
 									<input ng-model="reviewCtrl.review.author" type="email" placeholder="Enter your email" required />																   
 									
 									<select ng-model="reviewCtrl.review.stars" required>
@@ -122,22 +128,25 @@
 					
 						<br>
 					</div>
-				</section>	
-					
+				</section>		
+			
+			-->
+			
 			</div>
 			
 			
 			
-			<div class="container question-two" ng-show="checkQuestionNumber(2)">
-				<p>the april sun and your {{bodyConcern}}</p>
+			<div class="container question-two" ng-show="checkQuestionNumber(2)" >
+				<div ng-repeat="x in bodyConcern">  
+					<span class="listing-number">Number ={{$index}}</span>
+					<p>{{x}}</p> 
+					<br></br>
+					<button ng-click="switchToQuestionThree($index)"> forward </button>
+					<br></br>	
+				</div>
+							
+				<button ng-click="back()"> back </button>
 				
-				<p>the april sun and your {{bodyConcern}}</p>
-				<p>the april sun and your {{bodyConcern}}</p>
-				<p>the april sun and your {{bodyConcern}}</p>
-				
-				
-				<button ng-click="switchQuestion(1)"> back </button>
-				<button ng-click="switchQuestion(3)"> forward </button>
 				
 							
 			</div>
@@ -145,7 +154,14 @@
 			<div class="container question-three" ng-show="checkQuestionNumber(3)">
 				<p>Product Page</p>
 												
-				<button ng-click="switchQuestion(2)"> back </button>
+				<button ng-click="back()"> back </button>
+				
+				
+				<div ng-repeat="x in displayProducts" ng-if=" $index==productNumber">  
+				<p>{{x}}</p> 
+				
+				
+				</div>
 										
 			</div>
 			

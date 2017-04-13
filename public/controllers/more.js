@@ -1,9 +1,7 @@
 var otherApp = angular.module('otherApp', []);
 
 otherApp.controller('ArtistsFromDatabase', ['$scope','$http', function($scope,$http){
-	
-		var questionNumber=1;
-		
+					
 		$http.get('/artists').success(function(response) {
 			
 				//this is what happens after the response is recieved/. 
@@ -17,7 +15,7 @@ otherApp.controller('ArtistsFromDatabase', ['$scope','$http', function($scope,$h
 				console.log("Now print out the scope that should have the data from the get");
 				console.log($scope.artistList);
 				
-				$scope.bodyConcern=88;
+				
 					
 		});
 	
@@ -47,28 +45,73 @@ otherApp.controller('ArtistsFromDatabase', ['$scope','$http', function($scope,$h
 		
 		//Start of Nature Discovery
 		
-		$scope.switchQuestion=function(x,y){
-			$scope.bodyConcern=y;
-			console.log($scope.bodyConcern);
-			questionNumber=x;
+		var questionNumber=1;
+
+		
+		$scope.body = ["rashes", "fever", "indigestion", "acne", "respiratory", "arthritis", "asthma", "scars","muscle fatigue","cellulite","detox","sunburn","burns","insect bites","constipation","nausea","menstraul","flu/cough","muscle aches"];
+		$scope.mind=  ["mental fatigue","migranes/headaches","nervousness","depression","stress relief","insomnia"];			
 			
+		$scope.mindProducts=[ 
+					["mental fatigue","https://artnaturals.com/products/art-naturals-bermot-essential-oil-travel-size","https://artnaturals.com/products/art-naturals-frankincense-essential-oil","https://artnaturals.com/products/art-naturals-lemongrass-essential-oil"],
+					["migranes/headaches","https://artnaturals.com/products/art-naturals-bermot-essential-oil-travel-size","https://artnaturals.com/products/art-naturals-frankincense-essential-oil","https://artnaturals.com/products/art-naturals-lemongrass-essential-oil"],		
+					["nervousness","https://artnaturals.com/products/art-naturals-bermot-essential-oil-travel-size","https://artnaturals.com/products/art-naturals-frankincense-essential-oil","https://artnaturals.com/products/art-naturals-lemongrass-essential-oil"],
+					["depression","https://artnaturals.com/products/art-naturals-bermot-essential-oil-travel-size","https://artnaturals.com/products/art-naturals-frankincense-essential-oil","https://artnaturals.com/products/art-naturals-lemongrass-essential-oil"],
+					["stress relief","https://artnaturals.com/products/art-naturals-bermot-essential-oil-travel-size","https://artnaturals.com/products/art-naturals-frankincense-essential-oil","https://artnaturals.com/products/art-naturals-lemongrass-essential-oil"],		
+					["insomnia","https://artnaturals.com/products/art-naturals-bermot-essential-oil-travel-size","https://artnaturals.com/products/art-naturals-frankincense-essential-oil","https://artnaturals.com/products/art-naturals-lemongrass-essential-oil"]
+	
+				];
+				
+		$scope.bodyProducts=[
+					["rashes","https://artnaturals.com/products/art-naturals-bermot-essential-oil-travel-size","https://artnaturals.com/products/art-naturals-frankincense-essential-oil","https://artnaturals.com/products/art-naturals-lemongrass-essential-oil"],
+					["fever","https://artnaturals.com/products/art-naturals-bermot-essential-oil-travel-size","https://artnaturals.com/products/art-naturals-frankincense-essential-oil","https://artnaturals.com/products/art-naturals-lemongrass-essential-oil"],		
+					["indigestion","https://artnaturals.com/products/art-naturals-bermot-essential-oil-travel-size","https://artnaturals.com/products/art-naturals-frankincense-essential-oil","https://artnaturals.com/products/art-naturals-lemongrass-essential-oil"],
+					["acne","https://artnaturals.com/products/art-naturals-bermot-essential-oil-travel-size","https://artnaturals.com/products/art-naturals-frankincense-essential-oil","https://artnaturals.com/products/art-naturals-lemongrass-essential-oil"],
+					["respiratory","https://artnaturals.com/products/art-naturals-bermot-essential-oil-travel-size","https://artnaturals.com/products/art-naturals-frankincense-essential-oil","https://artnaturals.com/products/art-naturals-lemongrass-essential-oil"],		
+					["arthritis","https://artnaturals.com/products/art-naturals-bermot-essential-oil-travel-size","https://artnaturals.com/products/art-naturals-frankincense-essential-oil","https://artnaturals.com/products/art-naturals-lemongrass-essential-oil"]
+				];	
+				
+	
+		
+		$scope.switchToQuestionTwo=function(y){
+				
+				if(y==='mind')
+				{
+					$scope.bodyConcern=$scope.mind;
+					$scope.displayProducts=$scope.mindProducts;
+				}
+				else if(y==='body')
+				{
+					$scope.bodyConcern=$scope.body;
+					$scope.displayProducts=$scope.bodyProducts;
+				}
+				
+				console.log($scope.bodyConcern);
+				questionNumber=2;
 		};
+		
+		$scope.switchToQuestionThree=function(x){
+				questionNumber=3;
+				console.log(x);
+				$scope.productNumber=x;
+				
+		};
+				
+		$scope.back=function(){
+			
+				questionNumber=questionNumber-1;
+			
+		}
+		
 		
 		$scope.checkQuestionNumber=function(x){
 			if(x==questionNumber)
 			{
 				return true;
-				
 			}
-			
 			return false
 		};
 		
-		
-		
-		
-		
-		
+	
 		
 		
 }]);
