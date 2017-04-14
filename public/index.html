@@ -16,9 +16,7 @@
 					
 		<div ng-controller="ArtistsFromDatabase">
 			
-			<!-- the ng-controller="ArtistsFromDatabase" refers to our controller file.  -->
-			<!-- anything in "ArtistsFromDatabase" can only be reached inside the div -->
-			<!-- ng-controller attaches a controller function to the page. -->
+		
 			
 			<div class="container question-one" ng-show="checkQuestionNumber(1)">
 					
@@ -28,121 +26,15 @@
 				
 				<button ng-click="switchToQuestionTwo('mind')"> Mind </button>
 				<button ng-click="switchToQuestionTwo('body')"> Body </button>
-				
-				
-				
-				
-				
-				
-			<!--
-				
-				<select name="genreSelect" ng-model="chosenGenre" class= "dropdown" >
-					<option value="All" >All</option>
-					<option value="R&B">R&B </option>
-					<option value="Country">Country</option>
-					<option value="Metal">Metal</option>
-					<option value="Tejano">Tejano</option>
-					<option value="Blues">Blues</option>
-				</select>
-				
-
-				
-				<br></br>
-				<button ng-click="checkGenre(artistList)"> Random Music Artists</button>
-				<br></br>
-			
-	
-				
-				<section ng-controller="PanelController as panel", ng-repeat="product in artistList | orderBy:'name'">
-					
-					
-					
-					<div ng-show="product.genreSelected">
-						<ul class="nav nav-pills ">
-							<li ng-class="{ active: panel.isSelected(1)}">
-								<a href ng-click="panel.selectTab(1)">Description</a>
-							</li>
-
-							<li ng-class="{ active: panel.isSelected(2)}">
-								<a href ng-click="panel.selectTab(2)">Reviews</a>
-							</li>
-						</ul>	
-						
-						<div class="panel" ng-show="panel.isSelected(1)">
-					
-							
-								<h1> {{product.name}} </h1>
-								<img class="image-big" ng-src="{{product.image}}"> 
-								<h2> Debut: {{product.debut}} </h2>
-								<h2> Genre: {{product.genre}} </h2>
-								
-								<h2>Description: {{product.description}}</h2>
-						</div>
-												
-						<div class="panel" ng-show="panel.isSelected(2)">
-							<h1> {{product.name}} </h1>
-							<img class="image-big" ng-src="{{product.image}}"> 
-							<h2>Reviews</h2>
-								
-							<blockquote ng-repeat="review in product.reviews">
-								<div>
-									<cite>Review by: {{review.author}}</cite>
-								</div>
-									
-								<b>Stars: {{review.stars}}</b>
-									
-								<div>{{review.body}}</div>
-																				
-							</blockquote>
-								
-								<form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit= "reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
-									<h2>Review Form</h2>
-									
-									<input ng-model="reviewCtrl.review.author" type="email" placeholder="Enter your email" required />																   
-									
-									<select ng-model="reviewCtrl.review.stars" required>
-										<option value="1">1 star</option>
-										<option value="2">2 stars</option>
-										<option value="3">3 stars</option>
-										<option value="4">4 stars</option>
-										<option value="5">5 stars</option>
-									</select>
-									<br></br>
-									<textarea rows="4" cols="50" ng-model="reviewCtrl.review.body" placeholder="Type Review" required></textarea>
-																	
-									<input type="submit" value="Submit"/>
-									
-									<h4>Review Preview</h4>
-									<blockquote>
-										<div>
-											<cite>Review by: {{reviewCtrl.review.author}}</cite>
-										</div>
-										<b>Stars: {{reviewCtrl.review.stars}}</b>
-									
-										<div>{{reviewCtrl.review.body}} </div>
-																			
-									</blockquote>
-								
-								</form>
-						</div>
-					
-						<br>
-					</div>
-				</section>		
-			
-			-->
-			
 			</div>
 			
 			
 			
 			<div class="container question-two" ng-show="checkQuestionNumber(2)" >
-				<div ng-repeat="x in bodyConcern">  
-					<span class="listing-number">Number ={{$index}}</span>
-					<p>{{x}}</p> 
-					<br></br>
-					<button ng-click="switchToQuestionThree($index)"> forward </button>
-					<br></br>	
+				<div> Please choose a specific concern from the following:</div>
+				<div class="button-loop" ng-repeat="x in customerConcern">  
+					
+					<button ng-click="switchToQuestionThree($index)"> {{x.name}} </button>
 				</div>
 							
 				<button ng-click="back()"> back </button>
@@ -157,24 +49,29 @@
 				<button ng-click="back()"> back </button>
 				
 				
-				<div ng-repeat="x in displayProducts" ng-if=" $index==productNumber">  
-				<p>{{x}}</p> 
-				
-				
+				<div ng-repeat="x in customerConcern" ng-if=" $index==productNumber">  
+					<p>Concern: {{x.name}}</p> 
+								
+					
+					<div>
+						
+						<img src={{x.product[0].photo}}>
+						<a href={{x.product[0].link}} target="_blank">{{x.product[0].name}} </a>		
+												
+						<img src={{x.product[1].photo}}>
+						<a href={{x.product[1].link}} target="_blank"> {{x.product[1].name}} </a>
+															
+						
+						<img src={{x.product[2].photo}}>
+						<a href={{x.product[2].link}} target="_blank"> {{x.product[2].name}} </a>		
+						
+					</div>
 				</div>
 										
 			</div>
-			
-			
-			
-			
-		
-
-		
+				
 		</div>
 		
-			
-	
 				
 	</body>
 	
