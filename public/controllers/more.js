@@ -1,4 +1,4 @@
-var otherApp = angular.module('otherApp', []);
+var otherApp = angular.module('otherApp', ['ngAnimate']);
 
 otherApp.controller('ArtistsFromDatabase', ['$scope','$http', function($scope,$http){
 				
