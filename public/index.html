@@ -37,37 +37,42 @@
 					
 					<button ng-click="switchToQuestionThree($index)"> {{x.name}} </button>
 				</div>
-							
-				<button ng-click="back()"> back </button>
+				
+				
+				<button class="back" ng-click="back()"> back </button>
 				
 				
 							
 			</div>
 			
 			<div class="container question-three" ng-show="checkQuestionNumber(3)">
-				<p>Product Page</p>
+				
 												
-				<button ng-click="back()"> back </button>
+				
 				
 				
 				<div ng-repeat="x in customerConcern" ng-if=" $index==productNumber">  
-					<p>Concern: {{x.name}}</p> 
+					<p>{{x.name}}</p> 
 								
-					
-					
-						
-						
-						<img src={{x.product[0].photo}}>
-						<a href={{x.product[0].link}} target="_blank">{{x.product[0].name}} </a>		
-												
-						<img src={{x.product[1].photo}}>
-						<a href={{x.product[1].link}} target="_blank"> {{x.product[1].name}} </a>
-											
-						<img src={{x.product[2].photo}}>
-						<a href={{x.product[2].link}} target="_blank"> {{x.product[2].name}} </a>		
 										
-					
+					<div class="inline-block">
+					<img src={{x.product[0].photo}}>
+					<a href={{x.product[0].link}} target="_blank">{{x.product[0].name}} </a>		
+					</div>
+
+					<div class="inline-block">
+					<img src={{x.product[1].photo}}>
+					<a href={{x.product[1].link}} target="_blank"> {{x.product[1].name}} </a>	
+					</div>	
+
+					<div class="inline-block">
+					<img src={{x.product[2].photo}}>
+					<a href={{x.product[2].link}} target="_blank"> {{x.product[2].name}} </a>			
+					</div>
+				
 				</div>
+				
+				<button class="back" ng-click="back()"> back </button>
 										
 			</div>
 				

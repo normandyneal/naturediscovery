@@ -35,34 +35,34 @@ otherApp.controller('ArtistsFromDatabase', ['$scope','$http', function($scope,$h
 			
 		
 		$scope.mindProducts=[ 
-					{name:"mental fatigue", product:[products[0],products[1],products[2]]},
-					{name:"migranes", product:[products[1],products[3],products[4]]},
-					{name:"nervousness", product:[products[5],products[6],products[7]]},
-					{name:"depression", product:[products[0],products[8],products[9]]},
-					{name:"stress relief", product:[products[1],products[3],products[8]]},
-					{name:"insomnia", product:[products[0],products[0],products[0]]}
+					{name:"Mental Fatigue", product:[products[0],products[1],products[2]]},
+					{name:"Migranes", product:[products[1],products[3],products[4]]},
+					{name:"Nervousness", product:[products[5],products[6],products[7]]},
+					{name:"Depression", product:[products[0],products[8],products[9]]},
+					{name:"Stress Relief", product:[products[1],products[3],products[8]]},
+					{name:"Insomnia", product:[products[0],products[0],products[0]]}
 				];
 				
 		$scope.bodyProducts=[
-					{name:"rashes", product:[products[10],products[10],products[10]]},
-					{name:"fever", product:[products[11],products[2],products[2]]},
-					{name:"indigestion",product:[products[12],products[12],products[12]]},
-					{name:"acne", product:[products[12],products[14],products[15]]},
-					{name:"respiratory", product:[products[16],products[0],products[7]]},
-					{name:"arthritis", product:[products[3],products[17],products[15]]},
-					{name:"asthma", product:[products[1],products[1],products[7]]},
-					{name:"scars", product:[products[1],products[15],products[18]]},
-					{name:"muscle fatigue", product:[products[19],products[3],products[4]]},
-					{name:"cellulite", product:[products[20],products[21],products[13]]},
-					{name:"detox", product:[products[21],products[21],products[21]]},
-					{name:"sunburn", product:[products[0],products[22],products[22]]},
-					{name:"burns", product:[products[16],products[1],products[18]]},
-					{name:"insect bites",product:[products[18],products[10],products[2]]},
-					{name:"constipation", product:[products[13],products[13],products[13]]},
-					{name:"nausea", product:[products[7],products[7],products[7]]},
-					{name:"menstraul", product:[products[4],products[1],products[7]]},
-					{name:"flu/cough", product:[products[1],products[21],products[7]]},
-					{name:"muscle aches", product:[products[19],products[3],products[4]]}
+					{name:"Rashes", product:[products[10],products[10],products[10]]},
+					{name:"Fever", product:[products[11],products[2],products[2]]},
+					{name:"Indigestion",product:[products[12],products[12],products[12]]},
+					{name:"Acne", product:[products[12],products[14],products[15]]},
+					{name:"Respiratory", product:[products[16],products[0],products[7]]},
+					{name:"Arthritis", product:[products[3],products[17],products[15]]},
+					{name:"Asthma", product:[products[1],products[1],products[7]]},
+					{name:"Scars", product:[products[1],products[15],products[18]]},
+					{name:"Muscle Fatigue", product:[products[19],products[3],products[4]]},
+					{name:"Cellulite", product:[products[20],products[21],products[13]]},
+					{name:"Detox", product:[products[21],products[21],products[21]]},
+					{name:"Sunburn", product:[products[0],products[22],products[22]]},
+					{name:"Burns", product:[products[16],products[1],products[18]]},
+					{name:"Insect Bites",product:[products[18],products[10],products[2]]},
+					{name:"Constipation", product:[products[13],products[13],products[13]]},
+					{name:"Nausea", product:[products[7],products[7],products[7]]},
+					{name:"Menstraul", product:[products[4],products[1],products[7]]},
+					{name:"Flu/Cough", product:[products[1],products[21],products[7]]},
+					{name:"Muscle Aches", product:[products[19],products[3],products[4]]}
 				];	
 				
 		$scope.switchToQuestionTwo=function(y){

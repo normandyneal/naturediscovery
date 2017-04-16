@@ -2,7 +2,7 @@ body {
    	
 	font-family: Josefin Sans;
 	font-weight: 100;	
-    font-size: 14px;
+    font-size: 15px;
     
 	height: 60px;
 	padding: 25px;
@@ -97,9 +97,17 @@ a{
 
 
 
+.inline-block{
+	
+	display:inline-block;
+	margin: 20px;
+}
 
-
-
+.back{
+	color: #ffffff;
+	background: #1a0000
+	
+}
 
 
 
