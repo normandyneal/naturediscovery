@@ -19,7 +19,7 @@ button {
 	font-size: 80%;
 	text-transform: uppercase;
 	transition: background .2s;
-	margin: 20px;
+	margin: 15px;
 	
 }
 
@@ -62,6 +62,8 @@ img{
 }
 
 .question-two{
+	background-color: red;
+	width: 55%;
 	
 	position:absolute;
 	left:20%;
@@ -110,7 +112,16 @@ a{
 }
 
 
-
+@media (max-width: 1000px) {
+    .question-one, .question-two, .question-three{
+		width:45%;
+		top:0%;
+		left:40%;
+		background-color: lightgreen; 
+		
+		
+	}
+}
 
 
 

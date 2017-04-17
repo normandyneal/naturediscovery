@@ -19,42 +19,37 @@
 			
 		
 			
-			<div class="container question-one" ng-show="checkQuestionNumber(1)">
-					
+			<div class="row question-one" ng-show="checkQuestionNumber(1)">
 				
 				
 				<div class="inline"> Do you have a mind or a body concern?</div>
-				
 				<button  ng-click="switchToQuestionTwo('mind')"> Mind </button>
 				<button  ng-click="switchToQuestionTwo('body')"> Body </button>
+			
+			
 			</div>
 			
 			
 			
-			<div class="container question-two" ng-show="checkQuestionNumber(2)" >
+			<div class="row question-two" ng-show="checkQuestionNumber(2)" >
+				
+				
 				<div> Please choose a specific concern from the following:</div>
 				<div class="button-loop" ng-repeat="x in customerConcern">  
-					
 					<button ng-click="switchToQuestionThree($index)"> {{x.name}} </button>
 				</div>
-				
-				
 				<button class="back" ng-click="back()"> back </button>
 				
 				
 							
 			</div>
 			
-			<div class="container question-three" ng-show="checkQuestionNumber(3)">
-				
-												
-				
-				
+			<div class="row question-three" ng-show="checkQuestionNumber(3)">
+							
 				
 				<div ng-repeat="x in customerConcern" ng-if=" $index==productNumber">  
 					<p>{{x.name}}</p> 
-								
-										
+															
 					<div class="inline-block">
 					<img src={{x.product[0].photo}}>
 					<a href={{x.product[0].link}} target="_blank">{{x.product[0].name}} </a>		
