@@ -50,19 +50,31 @@
 				<div ng-repeat="x in customerConcern" ng-if=" $index==productNumber">  
 					<p>{{x.name}}</p> 
 															
-					<div class="inline-block">
-					<img src={{x.product[0].photo}}>
-					<a href={{x.product[0].link}} target="_blank">{{x.product[0].name}} </a>		
+					<div class="product-list-block">
+						<img src={{x.product[0].photo}}>
+						<div>{{x.product[0].name}}</div>
+						<div>{{x.product[0].bulletOne}}</div>
+						<div>{{x.product[0].bulletTwo}}</div>
+					
+						<a href={{x.product[0].link}} class="button"} target="_blank">View</a>		
+					
 					</div>
-
-					<div class="inline-block">
-					<img src={{x.product[1].photo}}>
-					<a href={{x.product[1].link}} target="_blank"> {{x.product[1].name}} </a>	
+					
+					<div class="product-list-block">
+						<img src={{x.product[1].photo}}>
+						<div>{{x.product[1].name}}</div>
+						<div>{{x.product[1].bulletOne}}</div>
+						<div>{{x.product[1].bulletTwo}}</div>
+						<a href={{x.product[1].link}} class="button"} target="_blank">View</a>		
+					
 					</div>	
 
-					<div class="inline-block">
-					<img src={{x.product[2].photo}}>
-					<a href={{x.product[2].link}} target="_blank"> {{x.product[2].name}} </a>			
+					<div class="product-list-block">
+						<img src={{x.product[2].photo}}>
+						<div>{{x.product[2].name}}</div>
+						<div>{{x.product[2].bulletOne}}</div>
+						<div>{{x.product[2].bulletTwo}}</div>
+						<a href={{x.product[2].link}} class="button"} target="_blank">View</a>		
 					</div>
 				
 				</div>
