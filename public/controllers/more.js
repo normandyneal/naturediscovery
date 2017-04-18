@@ -207,9 +207,9 @@ otherApp.controller('ArtistsFromDatabase', ['$scope','$http', function($scope,$h
 					{name:"Stress Relief", product:[products[1],products[3],products[8]]},
 					{name:"Insomnia", product:[products[0],products[0],products[0]]},
 					{name:"Anger", product:[products[0],products[0],products[0]]},
-					{name:"Creative Inspiration", product:[products[0],products[0],products[0]]},
-					{name:"Clarity", product:[products[0],products[0],products[0]]},
-					{name:"Calming", product:[products[0],products[0],products[0]]}
+					//{name:"Creative Inspiration", product:[products[0],products[0],products[0]]},
+					//{name:"Clarity", product:[products[0],products[0],products[0]]},
+					//{name:"Calming", product:[products[0],products[0],products[0]]}
 				];
 				
 		$scope.bodyProducts=[
@@ -232,7 +232,7 @@ otherApp.controller('ArtistsFromDatabase', ['$scope','$http', function($scope,$h
 					{name:"Menstraul", product:[products[4],products[1],products[7]]},
 					{name:"Flu/Cough", product:[products[1],products[21],products[7]]},
 					{name:"Muscle Aches", product:[products[19],products[3],products[4]]},
-					{name:"Aging Skin", product:[products[19],products[3],products[4]]},
+					/*{name:"Aging Skin", product:[products[19],products[3],products[4]]},
 					{name:"Antiallergenic", product:[products[19],products[3],products[4]]},
 					{name:"Antibacterial", product:[products[19],products[3],products[4]]},
 					{name:"Antibiotic", product:[products[19],products[3],products[4]]},
@@ -274,7 +274,7 @@ otherApp.controller('ArtistsFromDatabase', ['$scope','$http', function($scope,$h
 					{name:"Disinfectant", product:[products[0],products[0],products[0]]},
 					{name:"Digestive Ailments", product:[products[0],products[0],products[0]]},					
 					{name:"Decongestant", product:[products[0],products[0],products[0]]},
-					{name:"Diarrhea", product:[products[0],products[0],products[0]]}
+					{name:"Diarrhea", product:[products[0],products[0],products[0]]} */
 					
 					
 					
